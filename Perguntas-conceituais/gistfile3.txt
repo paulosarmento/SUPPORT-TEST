@@ -1,0 +1,29 @@
+Prezado aluno,
+
+Agradecemos pelo seu questionamento e pela busca por compreender melhor os conceitos de Domain-Driven Design (DDD) e suas 
+aplicações práticas.
+
+Quanto à estratégia para hidratar os dados de um agregado referenciado e disponibilizá-los para o frontend, é importante 
+considerar a responsabilidade do Repositório em carregar os dados necessários para a operação em questão. No caso de exibir a 
+lista de itens de um pedido com os dados do produto, o Repositório de Pedidos pode ser responsável por carregar os dados dos 
+itens, incluindo informações como nome do produto, referência e foto. Esse carregamento pode ser feito utilizando técnicas 
+como carregamento antecipado (Eager Loading) ou consultas customizadas que incluam os dados relacionados.
+
+No contexto de uma lista de pedidos a faturar, é comum carregar os dados essenciais do pedido, como dados do cliente, e 
+eventualmente os dados dos itens do pedido, mesmo que estes não sejam exibidos diretamente na lista. Isso pode facilitar a
+apresentação de informações adicionais, se necessário, e proporcionar uma experiência de usuário mais fluida. Novamente, o 
+Repositório de Pedidos desempenha um papel fundamental nesse processo, garantindo que os dados sejam carregados de forma 
+eficiente e coesa.
+
+Quanto à geração de reports e dashboards, é possível adotar diferentes abordagens, dependendo dos requisitos específicos e da 
+complexidade das consultas necessárias. Embora o DDD forneça princípios valiosos para o design de sistemas, é importante 
+considerar que, em alguns casos, a complexidade das consultas pode exigir acesso direto à base de dados para garantir o 
+desempenho adequado. Nesses casos, é importante manter a coesão da arquitetura e garantir que as consultas sejam realizadas 
+de forma eficiente e segura.
+
+Esperamos que essas orientações sejam úteis para esclarecer suas dúvidas. Se precisar de mais informações ou assistência 
+adicional, não hesite em nos contatar novamente. Estamos aqui para ajudar no que for necessário.
+
+Atenciosamente,
+Paulo César Sarmento Júnior
+Equipe de Suporte

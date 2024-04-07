@@ -1,0 +1,25 @@
+Prezado aluno,
+
+Agradecemos pelo seu interesse e participação ativa nas aulas sobre GraphQL.
+
+De fato, é uma observação perspicaz perceber que a obtenção da categoria de cada curso através de consultas individuais ao 
+banco pode resultar em um número significativo de consultas, especialmente quando lidamos com um grande volume de cursos.
+
+Para evitar esse problema e otimizar o desempenho do sistema, uma solução comum é realizar o que chamamos de "batching" ou 
+agrupamento de consultas. Nesse caso, ao invés de executar uma consulta para cada curso individualmente, podemos reunir os IDs
+dos cursos que desejamos obter as categorias e executar uma única consulta ao banco para recuperar todas as categorias de uma
+só vez. Isso reduz drasticamente o número de consultas, melhorando a eficiência e desempenho do sistema.
+
+Além disso, outra abordagem seria implementar um sistema de cache, onde as categorias dos cursos mais frequentemente acessados
+são armazenadas em cache temporário. Dessa forma, quando uma consulta é feita para obter a categoria de um curso, o sistema 
+primeiro verifica se essa informação está disponível no cache, evitando assim a necessidade de consultar o banco de dados.
+
+Essas são apenas algumas estratégias que podem ser adotadas para lidar com esse cenário específico. Recomendamos também 
+explorar outras técnicas de otimização e buscar orientação adicional na documentação do GraphQL e em recursos adicionais sobre 
+desenvolvimento de aplicações.
+
+Se precisar de mais informações ou assistência adicional, não hesite em nos contatar. Estamos aqui para ajudar.
+
+Atenciosamente,
+Paulo César Sarmento Júnior
+Equipe de Suporte 

@@ -1,0 +1,28 @@
+Prezado aluno,
+
+Agradecemos pela sua questão e pela busca por melhores práticas em desenvolvimento, seguindo os princípios de Domain-Driven 
+Design (DDD) e Arquitetura Limpa (Clean Architecture).
+
+No contexto de DDD e Clean Arch, é importante manter a separação de responsabilidades entre as camadas do sistema, garantindo 
+assim a coesão e a flexibilidade do código. No caso específico de uma entidade "Pedidos" relacionada com "Cliente", a melhor 
+forma de retornar os dados de Pedido e Cliente juntos no UseCase de busca é através do conceito de "Eager Loading" ou 
+carregamento antecipado.
+
+Em vez de realizar consultas separadas para recuperar os dados de Pedido e Cliente, onde cada consulta é executada em uma 
+transação separada no banco de dados, podemos utilizar técnicas que permitem carregar os dados relacionados de uma só vez.
+
+Por exemplo, ao utilizar um ORM (Object-Relational Mapping) como o Sequelize (para Node.js) ou o Entity Framework (para .NET), 
+é possível definir um método de busca que inclui automaticamente os dados relacionados. Isso garante que, ao buscar os pedidos,
+os dados do cliente também sejam carregados na mesma consulta, evitando assim o problema de desempenho associado a consultas 
+separadas.
+
+No entanto, é importante considerar o impacto no desempenho ao utilizar o carregamento antecipado, especialmente em casos onde
+há um grande volume de dados. Em alguns cenários, pode ser mais eficiente realizar consultas separadas e otimizá-las conforme 
+necessário, equilibrando a necessidade de desempenho com a manutenção da integridade do código.
+
+Se precisar de mais orientações ou exemplos específicos, não hesite em nos contatar novamente. Estamos à disposição para ajudar
+no que for necessário.
+
+Atenciosamente,
+Paulo César Sarmento Júnior
+Equipe de Suporte 
