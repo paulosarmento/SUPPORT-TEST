@@ -2,12 +2,11 @@ package cli_test
 
 import (
 	"fmt"
-	"testing"
-
+	"github.com/LucianTavares/desafio-golang/adapters/cli"
+	mock_application "github.com/LucianTavares/desafio-golang/application/mocks"
 	"github.com/golang/mock/gomock"
-	"github.com/paulosarmento/go-hexagonal/adapters/cli"
-	mock_application "github.com/paulosarmento/go-hexagonal/application/mocks"
 	"github.com/stretchr/testify/require"
+	"testing"
 )
 
 func TestRun(t *testing.T) {
@@ -34,7 +33,6 @@ func TestRun(t *testing.T) {
 	resultExpected := fmt.Sprintf("Product ID %s with the name %s has been created with the price %f and status %s",
 		productId, productName, productPrice, productStatus)
 	result, err := cli.Run(service, "create", "", productName, productPrice)
-
 	require.Nil(t, err)
 	require.Equal(t, resultExpected, result)
 
@@ -53,4 +51,5 @@ func TestRun(t *testing.T) {
 	result, err = cli.Run(service, "get", productId, "", 0)
 	require.Nil(t, err)
 	require.Equal(t, resultExpected, result)
+
 }

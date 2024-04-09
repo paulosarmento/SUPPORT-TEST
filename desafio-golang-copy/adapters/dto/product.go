@@ -1,6 +1,6 @@
 package dto
 
-import "github.com/paulosarmento/go-hexagonal/application"
+import "github.com/LucianTavares/desafio-golang/application"
 
 type Product struct {
 	ID     string  `json:"id"`

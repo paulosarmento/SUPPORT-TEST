@@ -2,12 +2,11 @@ package db_test
 
 import (
 	"database/sql"
+	"github.com/LucianTavares/desafio-golang/adapters/db"
+	"github.com/LucianTavares/desafio-golang/application"
+	"github.com/stretchr/testify/require"
 	"log"
 	"testing"
-
-	"github.com/paulosarmento/go-hexagonal/adapters/db"
-	"github.com/paulosarmento/go-hexagonal/application"
-	"github.com/stretchr/testify/require"
 )
 
 var Db *sql.DB
@@ -20,11 +19,11 @@ func setUp() {
 
 func createTable(db *sql.DB) {
 	table := `CREATE TABLE products (
-		"id" string,
-		"name" string, 
-		"price" float,
-		"status" string
-	);`
+			"id" string,
+			"name" string,
+			"price" float,
+			"status" string
+			);`
 	stmt, err := db.Prepare(table)
 	if err != nil {
 		log.Fatal(err.Error())
@@ -33,7 +32,7 @@ func createTable(db *sql.DB) {
 }
 
 func createProduct(db *sql.DB) {
-	insert := `insert into products values("abc", "Product Test", 0, "disabled")`
+	insert := `insert into products values("abc","Product Test",0,"disabled")`
 	stmt, err := db.Prepare(insert)
 	if err != nil {
 		log.Fatal(err.Error())
@@ -74,4 +73,5 @@ func TestProductDb_Save(t *testing.T) {
 	require.Equal(t, product.Name, productResult.GetName())
 	require.Equal(t, product.Price, productResult.GetPrice())
 	require.Equal(t, product.Status, productResult.GetStatus())
+
 }

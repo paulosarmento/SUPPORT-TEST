@@ -15,6 +15,7 @@ func (s *ProductService) Get(id string) (ProductInterface, error) {
 	}
 	return product, nil
 }
+
 func (s *ProductService) Create(name string, price float64) (ProductInterface, error) {
 	product := NewProduct()
 	product.Name = name
@@ -29,6 +30,7 @@ func (s *ProductService) Create(name string, price float64) (ProductInterface, e
 	}
 	return result, nil
 }
+
 func (s *ProductService) Enable(product ProductInterface) (ProductInterface, error) {
 	err := product.Enable()
 	if err != nil {
@@ -40,6 +42,7 @@ func (s *ProductService) Enable(product ProductInterface) (ProductInterface, err
 	}
 	return result, nil
 }
+
 func (s *ProductService) Disable(product ProductInterface) (ProductInterface, error) {
 	err := product.Disable()
 	if err != nil {

@@ -2,11 +2,11 @@ package cli
 
 import (
 	"fmt"
-
-	"github.com/paulosarmento/go-hexagonal/application"
+	"github.com/LucianTavares/desafio-golang/application"
 )
 
 func Run(service application.ProductServiceInterface, action string, productId string, productName string, price float64) (string, error) {
+
 	var result = ""
 
 	switch action {
